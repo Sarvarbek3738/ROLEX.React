@@ -22,7 +22,7 @@ function App() {
     {
       id: 1,
 
-      img: "/public/imgs/1-2.png",
+      img: "/imgs/1-2.png",
       deck: "Lorem ipsum dolor sit amet, consectetur  adipisicing elit. Accusantium voluptas reiciendis tenetur est rem rerum modi corporis assumenda minima maiores.",
       sale: "/imgs/Sale.svg",
       new: false,
@@ -31,7 +31,7 @@ function App() {
     },
     {
       id: 2,
-      img: "/public/imgs/1-1.png",
+      img: "/imgs/1-1.png",
       deck: "Lorem ipsum dolor sit amet, consectetur  adipisicing elit. Accusantium voluptas reiciendis tenetur est rem rerum modi corporis assumenda minima maiores.",
       sale: "/imgs/Sale.svg",
       new: false,
