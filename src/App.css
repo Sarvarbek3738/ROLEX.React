@@ -781,6 +781,35 @@ header.dark footer h6 {
 .menu.hidden {
   transform: scale(1);
 }
+.umumiyMadal p{
+  width: 400px;
+}
+.umumiyMadal button{
+  padding: 16px 50px;
+  border: none;
+  background-color: #BFBFBF;
+  color: #595959;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 5px;
+  cursor: pointer;
+  
+}
+.umumiyMadal button:hover {
+  background-color:#8C8C8C;
+  color: white;
+  transform: scale(1.1);
+}
+.umumiyMadal p{
+  padding: 20px 0px;
+  font-size: 18px;
+  color: #BFBFBF;
+}
+.umumiyMadal h1{
+  color:#FFB568;
+  letter-spacing: 5px;
+
+}
 
 
 .apple {
@@ -795,10 +824,55 @@ header{
   display: none;
 }
 
-
-
+.umumiyMadal{
+  /* display: none; */
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.850);
+  backdrop-filter: blur(5px);
+}
+.umumiyMadal .container{
+  padding-top: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 100px;
+}
+.umumiyMadal h2{
+  color: #FFB568;
+  padding-bottom: 20px;
+  font-size: 30px;
+}
+.umumiyMadal img{
+  width: 150%;
+}
+.box5{
+  cursor: pointer;
+}
+.box3{
+  cursor: pointer;
+}
+.box1{
+  cursor: pointer;
+}
+button{
+  cursor: pointer;
+}
+.ModalBtn{
+  margin-left: 15px;
+}
 
 @media(max-width:480px) {
+  .umumiyMadal .container{
+    padding-top: 100px;
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+  }
+
   #toggle-menu {
     display: block;
   }
@@ -899,9 +973,13 @@ header{
   .box6-2 {
     width: 100%;
   }
+  .box6-2 input{
+    width: 100%;
+  }
 
   .box6-2 button {
-    padding: 20px 126px;
+    padding: 20px 102px;
+    width: 100%;
   }
 
   .box6-1 {

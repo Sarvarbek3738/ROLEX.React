@@ -8,14 +8,165 @@ function App() {
   const [mode, setMode] = useState(JSON.parse(localStorage.getItem("dark")) ? JSON.parse(localStorage.getItem("dark")) : false);
   localStorage.setItem("dark", JSON.stringify(mode));
 
+
+  const [featured, setFeatured] = useState([
+    {
+      id: 0,
+      img: "/imgs/featured1 1.png",
+      deck: "Lorem ipsum dolor sit amet, consectetur  adipisicing elit. Accusantium voluptas reiciendis tenetur est rem rerum modi corporis assumenda minima maiores.",
+      sale: "",
+      new: false,
+      title: "JAZZMASTER",
+      price: "$1050",
+    },
+    {
+      id: 1,
+
+      img: "/public/imgs/1-2.png",
+      deck: "Lorem ipsum dolor sit amet, consectetur  adipisicing elit. Accusantium voluptas reiciendis tenetur est rem rerum modi corporis assumenda minima maiores.",
+      sale: "/imgs/Sale.svg",
+      new: false,
+      title: "INGERSOLL",
+      price: "$250",
+    },
+    {
+      id: 2,
+      img: "/public/imgs/1-1.png",
+      deck: "Lorem ipsum dolor sit amet, consectetur  adipisicing elit. Accusantium voluptas reiciendis tenetur est rem rerum modi corporis assumenda minima maiores.",
+      sale: "/imgs/Sale.svg",
+      new: false,
+      title: "ROSE GOLD",
+      price: "$890",
+    },
+  ]);
+  const [PRODUCTS, setPRODUCTS] = useState([
+    {
+      id: 0,
+      img: "/imgs/3-1.png",
+      deck: "Lorem ipsum dolor sit amet, consectetur  adipisicing elit. Accusantium voluptas reiciendis tenetur est rem rerum modi corporis assumenda minima maiores.",
+      sale: "/imgs/Sale.svg",
+      new: false,
+      title: "JAZZMASTER",
+      price: "$1050",
+    },
+    {
+      id: 1,
+      img: "/imgs/3-3.png",
+      deck: "Lorem ipsum dolor sit amet, consectetur  adipisicing elit. Accusantium voluptas reiciendis tenetur est rem rerum modi corporis assumenda minima maiores.",
+      sale: "/imgs/Sale.svg",
+      new: false,
+      title: "INGERSOLL",
+      price: "$250",
+    },
+    {
+      id: 2,
+      img: "/imgs/3-4.png",
+      deck: "Lorem ipsum dolor sit amet, consectetur  adipisicing elit. Accusantium voluptas reiciendis tenetur est rem rerum modi corporis assumenda minima maiores.",
+      sale: "/imgs/Sale.svg",
+      new: false,
+      title: "ROSE GOLD",
+      price: "$890",
+    },
+    {
+      id: 3,
+      img: "/imgs/3-5.png",
+      deck: "Lorem ipsum dolor sit amet, consectetur  adipisicing elit. Accusantium voluptas reiciendis tenetur est rem rerum modi corporis assumenda minima maiores.",
+      sale: "/imgs/Sale.svg",
+      new: false,
+      title: "JAZZMASTER",
+      price: "$1050",
+    },
+    {
+      id: 4,
+      img: "/imgs/3-1.png",
+      deck: "Lorem ipsum dolor sit amet, consectetur  adipisicing elit. Accusantium voluptas reiciendis tenetur est rem rerum modi corporis assumenda minima maiores.",
+      sale: "/imgs/Sale.svg",
+      new: false,
+      title: "INGERSOLL",
+      price: "$250",
+    },
+    {
+      id: 5,
+      img: "/imgs/3-5.png",
+      deck: "Lorem ipsum dolor sit amet, consectetur  adipisicing elit. Accusantium voluptas reiciendis tenetur est rem rerum modi corporis assumenda minima maiores.",
+      sale: "/imgs/Sale.svg",
+      new: false,
+      title: "ROSE GOLD",
+      price: "$890",
+    },
+  ]);
+
+  const [ARRIVALS, setARRIVALS] = useState([
+    {
+      id: 0,
+      img: "/imgs/5-1.png",
+      deck: "Lorem ipsum dolor sit amet, consectetur  adipisicing elit. Accusantium voluptas reiciendis tenetur est rem rerum modi corporis assumenda minima maiores.",
+      sale: "/imgs/Sale.svg",
+      new: false,
+      title: "JAZZMASTER",
+      price: "$1050",
+    },
+    {
+      id: 1,
+      img: "/imgs/5-2.png",
+      deck: "Lorem ipsum dolor sit amet, consectetur  adipisicing elit. Accusantium voluptas reiciendis tenetur est rem rerum modi corporis assumenda minima maiores.",
+      sale: "/imgs/Sale.svg",
+      new: false,
+      title: "INGERSOLL",
+      price: "$250",
+    },
+    {
+      id: 2,
+      img: "/imgs/5-3.png",
+      deck: "Lorem ipsum dolor sit amet, consectetur  adipisicing elit. Accusantium voluptas reiciendis tenetur est rem rerum modi corporis assumenda minima maiores.",
+      sale: "/imgs/Sale.svg",
+      new: false,
+      title: "ROSE GOLD",
+      price: "$890",
+    },
+    {
+      id: 3,
+      img: "/imgs/5-4.png",
+      deck: "Lorem ipsum dolor sit amet, consectetur  adipisicing elit. Accusantium voluptas reiciendis tenetur est rem rerum modi corporis assumenda minima maiores.",
+      sale: "/imgs/Sale.svg",
+      new: false,
+      title: "ROSE GOLD",
+      price: "$890",
+    },
+  ]);
+
+  const [oneProdact, setOneProdact] = useState(null)
+
   const [menu, setMenu] = useState(false)
-  // const [menu, setMenu] = useState(JSON.parse(localStorage.getItem(false)) ? JSON.parse(localStorage.getItem(false)) : true);
-  // localStorage.setItem("dark", JSON.stringify(mode));
 
   return (
     < >
       <div>
         <header className={mode ? "dark " : ""}>
+          {oneProdact && (
+            <div className="umumiyMadal" >
+              <div className="container">
+
+                <div>
+                  <h1>{oneProdact?.title}</h1>
+                  <p>{oneProdact?.deck}</p>
+                  <h2>{oneProdact?.price}</h2>
+                  <button onClick={() => {
+                    setOneProdact(null)
+                  }}>
+                    EXIT
+                  </button>
+                  <button className='ModalBtn'>
+                    ADD
+                  </button>
+                </div>
+                <div>
+                  <img src={oneProdact?.img} alt="" />
+                </div>
+              </div>
+            </div>
+          )}
+
           <div className="madaloynalar">
             <div className="container">
               <div id="menu" className={menu ? "menu hidden " : "menu "} >
@@ -102,33 +253,24 @@ function App() {
                 <div className="chiziq"></div>
                 <h1>FEATURED</h1>
                 <div className="section1box">
-                  <div className="box1">
-                    <div className="sale">
-                      <img src="/imgs/Sale.svg" alt="" />
-                    </div>
-                    <img src="/imgs/featured1 1.png" alt="" />
-                    <h3>JAZZMASTER</h3>
-                    <h4>$1050</h4>
-                    <button>ADD TO CART</button>
-                  </div>
-                  <div className="box1">
-                    <div className="sale">
-                      <img src="/imgs/Sale.svg" alt="" />
-                    </div>
-                    <img src="/imgs/1-1.png" alt="" />
-                    <h3>INGERSOLL</h3>
-                    <h4>$250</h4>
-                    <button>ADD TO CART</button>
-                  </div>
-                  <div className="box1">
-                    <div className="sale">
-                      <img src="/imgs/Sale.svg" alt="" />
-                    </div>
-                    <img src="/imgs/1-2.png" alt="" />
-                    <h3>ROSE GOLD</h3>
-                    <h4>$890</h4>
-                    <button>ADD TO CART</button>
-                  </div>
+                  {
+                    featured?.map((item) => {
+                      return (
+                        <div className="box1"
+                          onClick={() => {
+                            setOneProdact(item)
+                          }}>
+                          <div className="sale">
+                            <img src={item.sale} alt="" />
+                          </div>
+                          <img src={item.img} alt="" />
+                          <h3>{item.title}</h3>
+                          <h4>{item.price}</h4>
+                          <button>ADD TO CART</button>
+                        </div>
+                      )
+                    })
+                  }
                 </div>
               </div>
             </section>
@@ -157,63 +299,23 @@ function App() {
                 <div className="chiziq"></div>
                 <h1>PRODUCTS</h1>
                 <div className="section3box">
-                  <div className="box3">
-                    <img src="/imgs/3-1.png" alt="" />
-                    <h3>JAZZMASTER</h3>
-                    <h4>$1050</h4>
-                    <div className="icon">
-                      <img src="/imgs/Button product (1).svg" alt="" />
-                    </div>
-                  </div>
-                  <div className="box3">
-                    <img src="/imgs/product2.png" alt="" />
-                    <h3>INGERSOLL</h3>
-                    <h4>$250</h4>
-                    <div className="icon">
-                      <img src="/imgs/Button product (1).svg" alt="" />
-                    </div>
+                  {
+                    PRODUCTS?.map((item) => {
+                      return (
+                        <div className="box3" onClick={() => {
+                          setOneProdact(item)
+                        }}>
+                          <img src={item.img} alt="" />
 
-                  </div>
-                  <div className="box3">
-                    <img src="/imgs/3-3.png" alt="" />
-
-                    <h3>ROSE GOLD</h3>
-                    <h4>$890</h4>
-                    <div className="icon">
-                      <img src="/imgs/Button product (1).svg" alt="" />
-                    </div>
-
-                  </div>
-                  <div className="box3">
-                    <img src="/imgs/3-4.png" alt="" />
-
-                    <h3>ROSE GOLD</h3>
-                    <h4>$890</h4>
-                    <div className="icon">
-                      <img src="/imgs/Button product (1).svg" alt="" />
-                    </div>
-
-                  </div>
-                  <div className="box3">
-                    <img src="/imgs/product2.png" alt="" />
-                    <h3>ROSE GOLD</h3>
-                    <h4>$890</h4>
-                    <div className="icon">
-                      <img src="/imgs/Button product (1).svg" alt="" />
-                    </div>
-
-                  </div>
-                  <div className="box3">
-                    <img src="/imgs/3-5.png" alt="" />
-
-                    <h3>ROSE GOLD</h3>
-                    <h4>$890</h4>
-                    <div className="icon">
-                      <img src="/imgs/Button product (1).svg" alt="" />
-                    </div>
-
-                  </div>
-
+                          <h3>{item.title}</h3>
+                          <h4>{item.price}</h4>
+                          <div className="icon">
+                            <img src="/imgs/Button product (1).svg" alt="" />
+                          </div>
+                        </div>
+                      )
+                    })
+                  }
                 </div>
               </div>
             </section>
@@ -265,45 +367,25 @@ function App() {
                 <div className="chiziq"></div>
                 <h1>NEW ARRIVALS</h1>
                 <div className="section5box">
-                  <div className="box5">
-                    <div className="new">
-                      <p>NEW</p>
-                    </div>
-                    <img src="/imgs/5-1.png" alt="" />
-                    <h3>JAZZMASTER</h3>
-                    <h4>$1050</h4>
-                    <button>ADD TO CART</button>
-                  </div>
-                  <div className="box5">
-                    <div className="new">
-                      <p>NEW</p>
-                    </div>
-                    <img src="/imgs/5-2.png" alt="" />
+                  {
+                    ARRIVALS?.map((item) => {
+                      return (
+                        <div className="box5" onClick={() => {
+                          setOneProdact(item)
+                        }}>
+                          <div className="new">
+                            <p>NEW</p>
+                          </div>
+                          <img src={item.img} alt="" />
 
-                    <h3>JAZZMASTER</h3>
-                    <h4>$1050</h4>
-                    <button>ADD TO CART</button>
-                  </div>
-                  <div className="box5">
-                    <div className="new">
-                      <p>NEW</p>
-                    </div>
-                    <img src="/imgs/5-3.png" alt="" />
+                          <h3>{item.title}</h3>
+                          <h4>{item.price}</h4>
+                          <button>ADD TO CART</button>
+                        </div>
+                      )
+                    })
+                  }
 
-                    <h3>INGERSOLL</h3>
-                    <h4>$250</h4>
-                    <button>ADD TO CART</button>
-                  </div>
-                  <div className="box5">
-                    <div className="new">
-                      <p>NEW</p>
-                    </div>
-                    <img src="/imgs/5-4.png" alt="" />
-
-                    <h3>ROSE GOLD</h3>
-                    <h4>$890</h4>
-                    <button>ADD TO CART</button>
-                  </div>
                 </div>
               </div>
             </section>
