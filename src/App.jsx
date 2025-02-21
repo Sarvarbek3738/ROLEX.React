@@ -278,7 +278,7 @@ function App() {
               <div className="container">
                 <div className="box2">
                   <div className="box2-1">
-                    <img src="/imgs/Img story.jpg" alt="" />
+                    <img src="/imgs/Img story.png" alt="" />
                   </div>
                   <div className="box2-2">
                     <div className="chiziq2"></div>
